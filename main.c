@@ -19,11 +19,8 @@ int main()
                 flag++;
                 sub=j-x+1;
                 m=j;
-
-
             }
             else sub=-1;
-
         }
         if(sub!=-1)
             printf("%d %d",flag,sub);
