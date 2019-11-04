@@ -1,0 +1,14 @@
+C:\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.dll
+C:\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.pdb
+C:\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.csprojResolveAssemblyReference.cache
+C:\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.dll
+C:\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.pdb
+D:\MyBBS\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.dll
+D:\MyBBS\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.pdb
+D:\MyBBS\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.dll
+D:\MyBBS\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.pdb
+D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.dll
+D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.pdb
+D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.csproj.CoreCompileInputs.cache
+D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.dll
+D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.pdb

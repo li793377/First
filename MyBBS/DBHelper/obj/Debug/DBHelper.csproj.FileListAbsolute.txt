@@ -1,0 +1,5 @@
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\bin\Debug\DBHelper.dll
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\bin\Debug\DBHelper.pdb
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\obj\Debug\DBHelper.csprojResolveAssemblyReference.cache
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\obj\Debug\DBHelper.dll
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\obj\Debug\DBHelper.pdb
