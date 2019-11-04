@@ -9,13 +9,25 @@ namespace MyBBS.BLL
 {
     public static class ImageManager
     {
-        public static int addRevert(Image image)
+        public static int addPhoto(Image image)
         {
-            return ImageSer.addRevert(image);
+            return ImageSer.addPhoto(image);
         }
         public static string getMaxPhotoID()
         {
             return ImageSer.getMaxPhotoID();
+        }
+        public static int deletePhoto(Image image)
+        {
+            return ImageSer.deletePhoto(image);
+        }
+        public static Image findImageByPhotoID(Image image)
+        {
+            return ImageSer.findImageByPhotoID(image);
+        }
+        public static List<Image> getAllPhoto()
+        {
+            return ImageSer.getAllPhoto();
         }
     }
 }

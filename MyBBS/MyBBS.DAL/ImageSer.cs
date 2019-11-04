@@ -11,13 +11,13 @@ namespace MyBBS.DAL
 {
     public static class ImageSer
     {
-        public static int addRevert(Image image)
+        public static int addPhoto(Image image)
         {
             SqlParameter[] sp = new SqlParameter[]
          {
                 new SqlParameter("photoid",image.PhotoID),
                 new SqlParameter("photo",image.Photo),
-        };
+          };
             string sql = "insert into tb_card values(@photoid,@photo)";
             return sqlHelp.ExecuteNonQuery(sql, sp);
         }
@@ -36,25 +36,40 @@ namespace MyBBS.DAL
             }
             return MaxID;
         }
-        public static List<Image> FindHostByMID(Image image)
+        public static int deletePhoto(Image image)
+        {
+            SqlParameter[] sp = new SqlParameter[]
+         {
+                new SqlParameter("photoid",image.PhotoID),
+         };
+            string sql = "delete from tb_Image where 编号=@photoid";
+            return sqlHelp.ExecuteNonQuery(sql, sp);
+        }
+        public static List<Image> getAllPhoto()
+        {
+            string sql = "select * from tb_Image ORDER BY 编号";
+            SqlDataReader dr = sqlHelp.ExecuteReader(sql);
+            return getListOfImageFromDataReader(dr);
+        }
+        public static Image findImageByPhotoID(Image image)
         {
             SqlParameter[] sp = {
                 new SqlParameter("@photoid", image.PhotoID),
             };
             string sql = "select * from tb_Image where 头像 like @photoid";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
-            return getListOfImagebyDataReader(dr);
+            return getImagebyDataReader(dr);
         }
-         static List<Image> getListOfImagebyDataReader(SqlDataReader dr)
+        static List<Image> getListOfImageFromDataReader(SqlDataReader dr)
         {
             List<Image> listOfStudentInfo = new List<Image>();
             while (dr.Read())
             {
                 Image image = new Image();
                 int photoID = dr.GetOrdinal("编号");
-                if (!dr.IsDBNull(photoID)) 
+                if (!dr.IsDBNull(photoID))
                 {
-                    image.PhotoID= dr.GetString(photoID);
+                    image.PhotoID = dr.GetString(photoID);
                 }
                 int photo = dr.GetOrdinal("头像");
                 if (!dr.IsDBNull(photo))
@@ -67,11 +82,11 @@ namespace MyBBS.DAL
             }
             return listOfStudentInfo;
         }
-         static Image getOfImagebyDataReader(SqlDataReader dr)
+        static Image getImagebyDataReader(SqlDataReader dr)
         {
-           Image image = new Image();
+            Image image = new Image();
             while (dr.Read())
-            {         
+            {
                 int photoID = dr.GetOrdinal("编号");
                 if (!dr.IsDBNull(photoID))
                 {

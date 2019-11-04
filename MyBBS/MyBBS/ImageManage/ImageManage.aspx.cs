@@ -11,7 +11,7 @@ namespace MyBBS.ImageManage
 {
     public partial class ImageManage : System.Web.UI.Page
     {
-        Model.Image image = new Model.Image();
+        Model.Image images = new Model.Image();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -53,7 +53,7 @@ namespace MyBBS.ImageManage
                         //释放image对象占用的资源
                         newimage.Dispose();
                         image.Dispose();
-                        image.PhotoID = "IMG" + (Convert.ToInt32(ImageManager.getMaxPhotoID().Substring(3, 4)) + 1);
+                        images.PhotoID = "IMG" + (Convert.ToInt32(ImageManager.getMaxPhotoID().Substring(3, 4)) + 1);
                         images.Photo = relativepath;
                         ImageManager.addPhoto(images);
                         dlBind();
@@ -70,12 +70,12 @@ namespace MyBBS.ImageManage
         protected void dlImage_DeleteCommand(object source, DataListCommandEventArgs e)
         {
             images.PhotoID = dlImage.DataKeys[e.Item.ItemIndex].ToString();
-            images = ImageManager.findPhotoByID(images);
-            string strUrl = ds.Tables[0].Rows[0][1].ToString();
+            images = ImageManager.findImageByPhotoID(images);
+            string strUrl = images.Photo;
             //删除指定文件的图片
             string strFilePath = Server.MapPath(@"..\Images\Photo\") + strUrl.Substring(strUrl.LastIndexOf("\\") + 1, strUrl.Length - strUrl.LastIndexOf("\\") - 1);
             File.Delete(strFilePath);
-            imagemanage.DeletePhoto(imagemanage);
+            ImageManager.deletePhoto(images);
             dlBind();
             Response.Write("<script language=javascript>alert('头像删除成功！')</script>");
         }
@@ -103,7 +103,7 @@ namespace MyBBS.ImageManage
         {
             int curpage = Convert.ToInt32(labPage.Text);
             PagedDataSource ps = new PagedDataSource();
-            ps.DataSource = imagemanage.GetAllPhoto("tb_Image").Tables[0].DefaultView;
+            ps.DataSource = ImageManager.getAllPhoto().DefaultView;
             ps.AllowPaging = true; //是否可以分页
             ps.PageSize = 20; //显示的数量
             ps.CurrentPageIndex = curpage - 1; //取得当前页的页码
