@@ -1,0 +1,18 @@
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\bin\Debug\DBHelper.dll
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\bin\Debug\DBHelper.pdb
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\obj\Debug\DBHelper.dll
+e:\temp\documents\visual studio 2015\Projects\stu\DBHelper\obj\Debug\DBHelper.pdb
+C:\MyBBS\DBHelper\bin\Debug\DBHelper.dll
+C:\MyBBS\DBHelper\bin\Debug\DBHelper.pdb
+C:\MyBBS\DBHelper\obj\Debug\stu.DBHelper.csprojResolveAssemblyReference.cache
+C:\MyBBS\DBHelper\obj\Debug\DBHelper.dll
+C:\MyBBS\DBHelper\obj\Debug\DBHelper.pdb
+D:\MyBBS\MyBBS\DBHelper\bin\Debug\DBHelper.dll
+D:\MyBBS\MyBBS\DBHelper\bin\Debug\DBHelper.pdb
+D:\MyBBS\MyBBS\DBHelper\obj\Debug\DBHelper.dll
+D:\MyBBS\MyBBS\DBHelper\obj\Debug\DBHelper.pdb
+D:\Study\C#工作室\资料\MyBBS\DBHelper\bin\Debug\DBHelper.dll
+D:\Study\C#工作室\资料\MyBBS\DBHelper\bin\Debug\DBHelper.pdb
+D:\Study\C#工作室\资料\MyBBS\DBHelper\obj\Debug\stu.DBHelper.csproj.CoreCompileInputs.cache
+D:\Study\C#工作室\资料\MyBBS\DBHelper\obj\Debug\DBHelper.dll
+D:\Study\C#工作室\资料\MyBBS\DBHelper\obj\Debug\DBHelper.pdb
