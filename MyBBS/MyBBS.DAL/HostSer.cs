@@ -11,6 +11,35 @@ namespace MyBBS.DAL
 {
     public static class HostSer
     {
+        public static int addHost(Host host)
+        {
+            SqlParameter[] sp = new SqlParameter[]
+         {
+                new SqlParameter("hostname",host.HostName),
+                new SqlParameter("moduleid",host.ModuleID),
+                new SqlParameter("hostpwd",host.HostPwd),
+                new SqlParameter("tname",host.TName),
+                new SqlParameter("sex",host.Sex),
+                new SqlParameter("birthday",host.Birthday),
+                new SqlParameter("tel",host.Tel),
+                new SqlParameter("mobile",host.Mobile),
+                new SqlParameter("qq",host.QQ),
+                new SqlParameter("photo",host.Photo),
+                new SqlParameter("email",host.Email),
+                new SqlParameter("faddress",host.FAddress),
+                new SqlParameter("raddress",host.RAddress),
+                new SqlParameter("index",host.Index),
+                new SqlParameter("hostpop",host.HostPop),
+        };
+            string sql = "insert into tb_hosthostues( @hostname,@moduleid,@hostpwd,@tname,@sex,@birthday,@tel,@mobile,@qq,@photo,@email,@faddress,@raddress,@index,@hostpop)";
+            return sqlHelp.ExecuteNonQuery(sql, sp);
+        }
+        public static List<Host> getAllHost()
+        {
+            string sql = "selsct * from tb_host";
+            SqlDataReader dr = sqlHelp.ExecuteReader(sql);
+            return getListOfHostbyDataReader(dr);
+        }
         public static List<Host> FindHostByMID(Host host)
         {
             SqlParameter[] sp = {
@@ -206,7 +235,7 @@ namespace MyBBS.DAL
                 {
                     host.HostPop = dr.GetString(hostPop);
                 }
-                
+
 
             }
             return host;

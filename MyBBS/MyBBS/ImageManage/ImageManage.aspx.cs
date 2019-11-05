@@ -103,7 +103,7 @@ namespace MyBBS.ImageManage
         {
             int curpage = Convert.ToInt32(labPage.Text);
             PagedDataSource ps = new PagedDataSource();
-            ps.DataSource = ImageManager.getAllPhoto().DefaultView;
+            ps.DataSource = ImageManager.getAllPhoto();
             ps.AllowPaging = true; //是否可以分页
             ps.PageSize = 20; //显示的数量
             ps.CurrentPageIndex = curpage - 1; //取得当前页的页码
