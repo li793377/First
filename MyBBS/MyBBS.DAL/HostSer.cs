@@ -11,6 +11,14 @@ namespace MyBBS.DAL
 {
     public static class HostSer
     {
+        public static Host Login(Host host)
+        {
+            SqlParameter[] prams = {
+                                        data.MakeInParam("@hostname",  SqlDbType.NVarChar, 50, hostmanage.HostName),
+                                        data.MakeInParam("@hostpwd",  SqlDbType.NVarChar, 50,hostmanage.HostPwd),
+            };
+            return (data.RunProcReturn("SELECT * FROM tb_Host WHERE (版主 = @hostname) AND (密码 = @hostpwd)", prams, "tb_Host"));
+        }
         public static int addHost(Host host)
         {
             SqlParameter[] sp = new SqlParameter[]
@@ -40,6 +48,15 @@ namespace MyBBS.DAL
             SqlDataReader dr = sqlHelp.ExecuteReader(sql);
             return getListOfHostbyDataReader(dr);
         }
+        public static int deleteHost(Host host)
+        {
+            SqlParameter[] sp =
+                {
+                       new SqlParameter("@hostname",host.HostName),
+                };
+            string sql = "delete from tb_Host where 版主=@hostname";
+            return sqlHelp.ExecuteNonQuery(sql, sp);
+        }
         public static List<Host> FindHostByMID(Host host)
         {
             SqlParameter[] sp = {
@@ -49,7 +66,7 @@ namespace MyBBS.DAL
             SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
             return getListOfHostbyDataReader(dr);
         }
-        public static Host FindHostByMouduleID(Host host)
+        public static Host FindHostByModuleID(Host host)
         {
             SqlParameter[] sp = {
                 new SqlParameter("@moduleid", host.ModuleID),

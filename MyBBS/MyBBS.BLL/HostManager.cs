@@ -9,17 +9,25 @@ namespace MyBBS.BLL
 {
     public static class HostManager
     {
+        public static Host Login(Host host)
+        {
+            return HostSer.Login(host);
+        }
         public static int addHost(Host host)
         {
             return HostSer.addHost(host);
+        }
+        public static int deleteHost(Host host)
+        {
+            return HostSer.deleteHost(host);
         }
         public static List<Host> getAllHost()
         {
             return HostSer.getAllHost();
         }
-        public static Host FindHostByMouduleID(Host host)
+        public static Host FindHostByModuleID(Host host)
         {
-            return HostSer.FindHostByMouduleID(host);
+            return HostSer.FindHostByModuleID(host);
         }
         public static Host FindHostByHostName(Host host)
         {

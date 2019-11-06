@@ -30,16 +30,7 @@ namespace MyBBS.DAL
         {
             string sql = "select top 1 回帖编号 from tb_revert order by 回帖编号 Desc";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql);
-            string MaxID = "HT1001";
-            while (dr.Read())
-            {
-                int revertID = dr.GetOrdinal("回贴编号");
-                if (!dr.IsDBNull(revertID))
-                {
-                    MaxID = dr.GetString(revertID);
-                }
-            }
-            return MaxID;
+            return getOfRevertbyDataReader(dr).RevertID;
         }
         public static int DeleteRevertRevertID(Revert revert)
         {

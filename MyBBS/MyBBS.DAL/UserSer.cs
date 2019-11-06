@@ -11,6 +11,54 @@ namespace MyBBS.DAL
 {
     public static class UserSer
     {
+        public static User Login(User user)
+        {
+            SqlParameter[] sp =
+            {
+                new SqlParameter("@username",user.UserName),
+                new SqlParameter("@userpwd",user.UserPwd ),
+            };
+            string sql = "SELECT * FROM tb_User WHERE (用户名 = @username) AND (用户密码 = @userpwd)";
+            SqlDataReader dr = sqlHelp.ExecuteReader(sql,sp);
+            return getOfUserbyDataReader(dr);
+        }
+        public static int addUser(User user)
+        {
+            SqlParameter[] sp = new SqlParameter[]
+         {
+                new SqlParameter("@username",user),
+                new SqlParameter("@userpwd",user.UserPwd),
+                new SqlParameter("@tname",user.TName),
+                new SqlParameter("@sex",user.Sex),
+                new SqlParameter("@birthday",user.Birthday),
+                new SqlParameter("@tel",user.Tel),
+                new SqlParameter("@mobile",user.Mobile),
+                new SqlParameter("@qq",user.QQ),
+                new SqlParameter("@photo",user.Photo),
+                new SqlParameter("@email",user.Email),
+                new SqlParameter("@faddress",user.FAddress),
+                new SqlParameter("@raddress",user.RAddress),
+                new SqlParameter("@index",user.Index),
+                new SqlParameter("@userpop",user.UserPop),
+          };
+            string sql = "insert into tb_user values(@username,@userpwd,@tname,@sex,@birthday,@tel,@mobile,@qq,@photo,@email,@faddress,@raddress,@index,@userpop)";
+            return sqlHelp.ExecuteNonQuery(sql, sp);
+        }
+        public static int deleteUser(User user)
+        {
+            SqlParameter[] sp =
+            {
+                new SqlParameter("@username",user.UserName),
+            };
+            string sql = "delect from tb_user where 用户名=@username";
+            return sqlHelp.ExecuteNonQuery(sql, sp);
+        }
+        public static List<User> getAllUser()
+        {
+            string sql = "select * from tb_user";
+            SqlDataReader dr = sqlHelp.ExecuteReader(sql);
+            return getListOfUserbyDataReader(dr);
+        }
         public static User findUserByUserName(User user)
         {
             SqlParameter[] sp = {
@@ -105,7 +153,7 @@ namespace MyBBS.DAL
         }
         static User getOfUserbyDataReader(SqlDataReader dr)
         {
-             User user = new User();
+            User user = new User();
             while (dr.Read())
             {
                 int userName = dr.GetOrdinal("用户名");

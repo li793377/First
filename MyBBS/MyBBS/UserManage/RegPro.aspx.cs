@@ -13,5 +13,13 @@ namespace MyBBS.UserManage
         {
 
         }
+        protected void btnAgree_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
+        }
+        protected void btnRefuse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../ModuleManage/ModuleInfo.aspx");
+        }
     }
 }

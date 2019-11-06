@@ -30,16 +30,7 @@ namespace MyBBS.DAL
         {
             string sql = "select top 1 帖子编号 from tb_card order by 帖子编号 Desc";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql);
-            string MaxID="T1001";
-            while (dr.Read())
-            {
-                int cardID = dr.GetOrdinal("帖子编号");
-                if (!dr.IsDBNull(cardID))
-                {
-                    MaxID = dr.GetString(cardID);
-                }
-            }
-            return MaxID;
+            return getOfCardFromDataReader(dr).CardID;
         }
         public static int deleteCard(Card card)
         {
