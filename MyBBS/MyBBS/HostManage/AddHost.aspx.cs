@@ -83,7 +83,7 @@ namespace MyBBS.HostManage
                     try
                     {
                         module.ModuleName = ddlModule.SelectedValue;
-                        host.ModuleID = ModuleManager.findModuleByModuleName(module).ModuleID;
+                        host.ModuleID = ModuleManager.findModuleByName(module).ModuleID;
                     }
                     catch
                     {

@@ -7,6 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>无标题页</title>
     <link href="../CSS/StyleSheet.css" rel="Stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            position: absolute;
+            left: 462px;
+            top: 199px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -95,7 +102,7 @@
                     <asp:TextBox ID="txtBirthday" runat="server" Width="123px"></asp:TextBox>
                     <asp:Button ID="btnSelDate" runat="server" Text="…" CssClass="ButtonCss" OnClick="btnSelDate_Click" CausesValidation="False" /></td>
                 <td>
-                    <asp:Calendar ID="calDate" runat="server" style=" position:absolute; left: 462px; top: 199px;" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="169px" NextPrevFormat="ShortMonth" OnSelectionChanged="calDate_SelectionChanged" Visible="False" Width="249px">
+                    <asp:Calendar ID="calDate" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="169px" NextPrevFormat="ShortMonth" OnSelectionChanged="calDate_SelectionChanged" Visible="False" Width="249px" CssClass="auto-style1">
                         <SelectedDayStyle BackColor="#333399" ForeColor="White" />
                         <TodayDayStyle BackColor="#999999" ForeColor="White" />
                         <DayStyle BackColor="#CCCCCC" />
@@ -227,4 +234,3 @@
     </form>
 </body>
 </html>
-

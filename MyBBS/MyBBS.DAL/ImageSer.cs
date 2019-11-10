@@ -56,7 +56,7 @@ namespace MyBBS.DAL
             SqlParameter[] sp = {
                 new SqlParameter("@photoid", image.PhotoID),
             };
-            string sql = "select * from tb_Image where 头像 like @photoid";
+            string sql = "select * from tb_Image where 编号 like @photoid";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
             return getImagebyDataReader(dr);
         }

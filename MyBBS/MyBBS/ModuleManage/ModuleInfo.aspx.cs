@@ -60,7 +60,7 @@ namespace MyBBS.ModuleManage
             }
             this.labBackPage.Text = Convert.ToString(ps.PageCount);
             dlInfo.DataSource = ps;
-            dlInfo.DataKeyField = "版块编号";
+            dlInfo.DataKeyField ="ModuleID";
             dlInfo.DataBind();
         }
         public string getHost(string str)

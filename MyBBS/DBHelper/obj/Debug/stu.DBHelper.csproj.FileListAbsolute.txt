@@ -16,3 +16,7 @@ D:\Study\C#工作室\资料\MyBBS\DBHelper\bin\Debug\DBHelper.pdb
 D:\Study\C#工作室\资料\MyBBS\DBHelper\obj\Debug\stu.DBHelper.csproj.CoreCompileInputs.cache
 D:\Study\C#工作室\资料\MyBBS\DBHelper\obj\Debug\DBHelper.dll
 D:\Study\C#工作室\资料\MyBBS\DBHelper\obj\Debug\DBHelper.pdb
+C:\Users\Bin\First\MyBBS\DBHelper\bin\Debug\DBHelper.dll
+C:\Users\Bin\First\MyBBS\DBHelper\bin\Debug\DBHelper.pdb
+C:\Users\Bin\First\MyBBS\DBHelper\obj\Debug\DBHelper.dll
+C:\Users\Bin\First\MyBBS\DBHelper\obj\Debug\DBHelper.pdb

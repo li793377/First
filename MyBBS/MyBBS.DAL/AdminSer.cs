@@ -13,6 +13,17 @@ namespace MyBBS.DAL
 {
     public static class AdminSer
     {
+        public static Admin Login(Admin admin)
+        {
+            SqlParameter[] sp =
+            {
+                        new SqlParameter("@adminname",admin.AdminName),
+                        new SqlParameter("@adminpwd",admin.AdminPwd),
+            };
+            string sql = "SELECT * FROM tb_Admin WHERE (管理员姓名 = @adminname) AND (管理员密码 = @adminpwd)";
+            SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
+            return getOfAdminbyDataReader(dr);
+        }
         public static Admin getAdmin()
         {
             string sql = "select * from tb_Admin";

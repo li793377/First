@@ -23,7 +23,7 @@ namespace MyBBS.HostManage
                 for (int i = 0; i < listOfHost.Count; i++)
                 {
                     module.ModuleID = listOfHost[i].ModuleID;
-                    gvHostInfo.Rows[i].Cells[1].Text = ModuleManager.findModuleByModuleName(module).ModuleName;
+                    gvHostInfo.Rows[i].Cells[1].Text = ModuleManager.findModuleByName(module).ModuleName;
                     gvHostInfo.Rows[i].Cells[3].Text = listOfHost[i].Birthday.ToLongDateString();
                 }
             }

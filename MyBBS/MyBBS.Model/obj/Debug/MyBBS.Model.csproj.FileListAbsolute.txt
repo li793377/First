@@ -12,3 +12,7 @@ D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.pdb
 D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.csproj.CoreCompileInputs.cache
 D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.dll
 D:\Study\C#工作室\资料\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.dll
+C:\Users\Bin\First\MyBBS\MyBBS.Model\bin\Debug\MyBBS.Model.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.dll
+C:\Users\Bin\First\MyBBS\MyBBS.Model\obj\Debug\MyBBS.Model.pdb

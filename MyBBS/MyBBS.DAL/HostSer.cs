@@ -11,13 +11,38 @@ namespace MyBBS.DAL
 {
     public static class HostSer
     {
+        public static int UpdateHost(Host host)
+        {
+            SqlParameter[] sp =
+            {
+                    new SqlParameter("@hostname",host.HostName),
+                    new SqlParameter("@hostpwd",host.HostPwd),
+                    new SqlParameter("@tname",host.TName),
+                    new SqlParameter("@sex",host.Sex),
+                    new SqlParameter("@birthday",host.Birthday),
+                    new SqlParameter("@tel",host.Tel),
+                    new SqlParameter("@mobile", host.Mobile),
+                    new SqlParameter("@qq",host.QQ),
+                    new SqlParameter("@photo",host.Photo),
+                    new SqlParameter("@email", host.Email),
+                    new SqlParameter("@faddress", host.FAddress),
+                    new SqlParameter("@raddress",host.RAddress),
+                    new SqlParameter("@index",host.Index),
+            };
+            string sql = "update tb_Host set 密码=@hostpwd,真实姓名=@tname,性别=@sex,出生日期=@birthday,联系电话=@tel,手机=@mobile,"
+                + "QQ号=@qq,头像=@photo,Email=@email,家庭住址=@faddress,联系地址=@raddress,个人首页=@index where 版主=@hostname";
+            return sqlHelp.ExecuteNonQuery(sql, sp);
+        }
         public static Host Login(Host host)
         {
-            SqlParameter[] prams = {
-                                        data.MakeInParam("@hostname",  SqlDbType.NVarChar, 50, hostmanage.HostName),
-                                        data.MakeInParam("@hostpwd",  SqlDbType.NVarChar, 50,hostmanage.HostPwd),
+            SqlParameter[] sp =
+            {
+                        new SqlParameter("@hostname",host.HostName),
+                        new SqlParameter("@hostpwd",host.HostPwd),
             };
-            return (data.RunProcReturn("SELECT * FROM tb_Host WHERE (版主 = @hostname) AND (密码 = @hostpwd)", prams, "tb_Host"));
+            string sql = "SELECT * FROM tb_Host WHERE (版主 = @hostname) AND (密码 = @hostpwd)";
+            SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
+            return getOfHostbyDataReader(dr);
         }
         public static int addHost(Host host)
         {

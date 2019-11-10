@@ -14,13 +14,15 @@ namespace MyBBS.UserManage
         Model.Image images = new Model.Image();
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
                 ddlPhoto.DataSource = ImageManager.getAllPhoto();
-                ddlPhoto.DataTextField = "编号";
+                ddlPhoto.DataTextField = "PhotoID";
                 ddlPhoto.DataBind();
                 images.PhotoID = ddlPhoto.SelectedValue;
-                imgPhoto.ImageUrl = ImageManager.findImageByPhotoID(images).Photo;
+                images = ImageManager.findImageByPhotoID(images);
+                imgPhoto.ImageUrl = images.Photo;
             }
         }
         protected void btnTest_Click(object sender, EventArgs e)

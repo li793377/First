@@ -9,6 +9,10 @@ namespace MyBBS.BLL
 {
     public static class AdminManager
     {
+        public static Admin Login(Admin admin)
+        {
+            return AdminSer.Login(admin);
+        }
         public static Admin getAdmin()
         {
             return AdminSer.getAdmin();
@@ -18,5 +22,5 @@ namespace MyBBS.BLL
 
             return AdminSer.updateAdmin(admin);
         }
-        }
+    }
 }

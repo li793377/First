@@ -9,6 +9,10 @@ namespace MyBBS.BLL
 {
     public static class HostManager
     {
+        public static int UpdateHost(Host host)
+        {
+            return HostSer.UpdateHost(host);
+        }
         public static Host Login(Host host)
         {
             return HostSer.Login(host);

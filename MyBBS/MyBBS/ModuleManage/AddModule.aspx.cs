@@ -28,7 +28,7 @@ namespace MyBBS.ModuleManage
             else
             {
                 module.ModuleName = txtName.Text;
-                if (ModuleManager.findModuleByModuleName(module).ModuleName == null)
+                if (ModuleManager.findModuleByName(module).ModuleName == null)
                 {
                     Response.Write("<script language=javascript>alert('该版块名已经存在！')</script>");
                     txtName.Text = string.Empty;
