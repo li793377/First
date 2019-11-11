@@ -64,7 +64,7 @@ namespace MyBBS.CardManage
             protected void dlInfo_DeleteCommand(object source, DataListCommandEventArgs e)
             {
                 Session["Pop"] = "管理员";
-            if (Session["Pop"] == "管理员" || Session["Pop"] == "版主")
+            if (Session["Pop"].ToString().Trim() == "管理员" || Session["Pop"].ToString().Trim() == "版主")
             {
                 string revertid = dlInfo.DataKeys[e.Item.ItemIndex].ToString(); //获取当前DataList控件列
                 revert.RevertID = revertid;
@@ -149,7 +149,7 @@ namespace MyBBS.CardManage
                     if (strPop == "版主")
                     {
                         host.ModuleID = card.ModuleID;
-                        host = HostManager.FindHostByMouduleID(host);
+                        host = HostManager.FindHostByModuleID(host);
                         strPhoto = host.Photo;
                         Label2.Text = host.TName;
                     }

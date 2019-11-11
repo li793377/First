@@ -23,7 +23,7 @@ namespace MyBBS.HostManage
                 for (int i = 0; i < listOfHost.Count; i++)
                 {
                     module.ModuleID = listOfHost[i].ModuleID;
-                    gvHostInfo.Rows[i].Cells[1].Text = ModuleManager.findModuleByModuleName(module).ModuleName;
+                    gvHostInfo.Rows[i].Cells[1].Text = ModuleManager.findModuleByName(module).ModuleName;
                     gvHostInfo.Rows[i].Cells[3].Text = listOfHost[i].Birthday.ToLongDateString();
                 }
             }
@@ -55,34 +55,37 @@ namespace MyBBS.HostManage
         }
         protected void gvHostInfo_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            hostmanage.HostName = gvHostInfo.DataKeys[e.RowIndex].Value.ToString();
-            hostmanage.DeleteHost(hostmanage);
+            host.HostName = gvHostInfo.DataKeys[e.RowIndex].Value.ToString();
+            if (HostManager.deleteHost(host) != 0)
+                Response.Write("<script language=javascript>alert('删除成功！')</script>");
+            else
+                Response.Write("<script language=javascript>alert('删除失败！')</script>");
             gvBind();
         }
         public void gvBind()
         {
             if (txtName.Text == string.Empty)
             {
-                gvHostInfo.DataSource = hostmanage.GetAllHost("tb_Host").Tables[0];
+                List<Host> listOfHost = HostManager.getAllHost();
+                gvHostInfo.DataSource = listOfHost;
                 gvHostInfo.DataBind();
-                for (int i = 0; i < hostmanage.GetAllHost("tb_Host").Tables[0].Rows.Count; i++)
+                for (int i = 0; i < listOfHost.Count; i++)
                 {
-                    modulemanage.ModuleID = hostmanage.GetAllHost("tb_Host").Tables[0].Rows[i][1].ToString();
-                    gvHostInfo.Rows[i].Cells[1].Text = modulemanage.FindModuleByName(modulemanage, "tb_Module").Tables[0].Rows[i][1].ToString();
-                    gvHostInfo.Rows[i].Cells[3].Text = Convert.ToDateTime(hostmanage.GetAllHost("tb_Host").Tables[0].Rows[i][5].ToString()).ToLongDateString();
+                    module.ModuleID = listOfHost[i].ModuleID.ToString();
+                    gvHostInfo.Rows[i].Cells[1].Text = ModuleManager.FindModuleByID(module).ModuleName;
+                    gvHostInfo.Rows[i].Cells[3].Text = listOfHost[i].Birthday.ToLongDateString();
                 }
             }
             else
             {
-                hostmanage.HostName = txtName.Text;
-                gvHostInfo.DataSource = hostmanage.FindHostByName(hostmanage, "tb_Host").Tables[0];
+                host.HostName = txtName.Text;
+                host=HostManager.FindHostByHostName(host);
+                gvHostInfo.DataSource = host;
                 gvHostInfo.DataBind();
-                for (int i = 0; i < hostmanage.FindHostByName(hostmanage, "tb_Host").Tables[0].Rows.Count; i++)
-                {
-                    modulemanage.ModuleID = hostmanage.FindHostByName(hostmanage, "tb_Host").Tables[0].Rows[i][1].ToString();
-                    gvHostInfo.Rows[i].Cells[1].Text = modulemanage.FindModuleByName(modulemanage, "tb_Module").Tables[0].Rows[i][1].ToString();
-                    gvHostInfo.Rows[i].Cells[3].Text = Convert.ToDateTime(hostmanage.FindHostByName(hostmanage, "tb_Host").Tables[0].Rows[i][5].ToString()).ToLongDateString();
-                }
+                module.ModuleID = host.ModuleID;
+                gvHostInfo.Rows[0].Cells[1].Text = ModuleManager.FindModuleByID(module).ModuleName;
+                gvHostInfo.Rows[0].Cells[3].Text = host.Birthday.ToLongDateString();
+
             }
         }
     }

@@ -38,3 +38,13 @@ D:\Study\C#工作室\资料\MyBBS\MyBBS.DAL\obj\Debug\MyBBS.DAL.csproj.CoreCompi
 D:\Study\C#工作室\资料\MyBBS\MyBBS.DAL\obj\Debug\MyBBS.DAL.csproj.CopyComplete
 D:\Study\C#工作室\资料\MyBBS\MyBBS.DAL\obj\Debug\MyBBS.DAL.dll
 D:\Study\C#工作室\资料\MyBBS\MyBBS.DAL\obj\Debug\MyBBS.DAL.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\bin\Debug\MyBBS.DAL.dll
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\bin\Debug\MyBBS.DAL.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\bin\Debug\DBHelper.dll
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\bin\Debug\MyBBS.Model.dll
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\bin\Debug\DBHelper.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\bin\Debug\MyBBS.Model.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\obj\Debug\MyBBS.DAL.csprojAssemblyReference.cache
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\obj\Debug\MyBBS.DAL.csproj.CopyComplete
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\obj\Debug\MyBBS.DAL.dll
+C:\Users\Bin\First\MyBBS\MyBBS.DAL\obj\Debug\MyBBS.DAL.pdb

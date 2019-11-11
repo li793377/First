@@ -46,3 +46,15 @@ D:\Study\C#工作室\资料\MyBBS\MyBBS.BLL\obj\Debug\MyBBS.BLL.csproj.CoreCompi
 D:\Study\C#工作室\资料\MyBBS\MyBBS.BLL\obj\Debug\MyBBS.BLL.csproj.CopyComplete
 D:\Study\C#工作室\资料\MyBBS\MyBBS.BLL\obj\Debug\MyBBS.BLL.dll
 D:\Study\C#工作室\资料\MyBBS\MyBBS.BLL\obj\Debug\MyBBS.BLL.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\bin\Debug\MyBBS.BLL.dll
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\bin\Debug\MyBBS.BLL.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\bin\Debug\MyBBS.DAL.dll
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\bin\Debug\MyBBS.Model.dll
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\bin\Debug\DBHelper.dll
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\bin\Debug\MyBBS.DAL.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\bin\Debug\MyBBS.Model.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\bin\Debug\DBHelper.pdb
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\obj\Debug\MyBBS.BLL.csprojAssemblyReference.cache
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\obj\Debug\MyBBS.BLL.csproj.CopyComplete
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\obj\Debug\MyBBS.BLL.dll
+C:\Users\Bin\First\MyBBS\MyBBS.BLL\obj\Debug\MyBBS.BLL.pdb

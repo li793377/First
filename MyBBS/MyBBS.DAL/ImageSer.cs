@@ -15,15 +15,15 @@ namespace MyBBS.DAL
         {
             SqlParameter[] sp = new SqlParameter[]
          {
-                new SqlParameter("photoid",image.PhotoID),
-                new SqlParameter("photo",image.Photo),
+                new SqlParameter("@photoid",image.PhotoID),
+                new SqlParameter("@photo",image.Photo),
           };
             string sql = "insert into tb_card values(@photoid,@photo)";
             return sqlHelp.ExecuteNonQuery(sql, sp);
         }
         public static string getMaxPhotoID()
         {
-            string sql = "select top 1 编号 from tb_image order by 编号 Desc";
+            string sql = "select top 1 * from tb_image order by 编号 Desc";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql);
             string MaxID = "IMG1001";
             while (dr.Read())
@@ -40,7 +40,7 @@ namespace MyBBS.DAL
         {
             SqlParameter[] sp = new SqlParameter[]
          {
-                new SqlParameter("photoid",image.PhotoID),
+                new SqlParameter("@photoid",image.PhotoID),
          };
             string sql = "delete from tb_Image where 编号=@photoid";
             return sqlHelp.ExecuteNonQuery(sql, sp);
@@ -56,7 +56,7 @@ namespace MyBBS.DAL
             SqlParameter[] sp = {
                 new SqlParameter("@photoid", image.PhotoID),
             };
-            string sql = "select * from tb_Image where 头像 like @photoid";
+            string sql = "select * from tb_Image where 编号 like @photoid";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
             return getImagebyDataReader(dr);
         }

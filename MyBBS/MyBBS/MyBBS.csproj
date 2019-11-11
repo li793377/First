@@ -720,9 +720,12 @@
     <Content Include="CardManage\DeliverCard.aspx" />
     <Content Include="CardManage\RevertCard.aspx" />
     <Content Include="Common\checkcode.aspx" />
+    <Content Include="Common\Footer.ascx" />
+    <Content Include="Common\Header.ascx" />
     <Content Include="Common\LimitPop.aspx" />
     <Content Include="Common\Login.aspx" />
     <Content Include="Common\ModifyInfo.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="HostManage\AddHost.aspx" />
     <Content Include="HostManage\HostManage.aspx" />
     <Content Include="ImageManage\ImageManage.aspx" />
@@ -830,6 +833,20 @@
     <Compile Include="Common\checkcode.aspx.designer.cs">
       <DependentUpon>checkcode.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Common\LimitPop.aspx.cs">
       <DependentUpon>LimitPop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -850,6 +867,13 @@
     </Compile>
     <Compile Include="Common\ModifyInfo.aspx.designer.cs">
       <DependentUpon>ModifyInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="HostManage\AddHost.aspx.cs">
       <DependentUpon>AddHost.aspx</DependentUpon>

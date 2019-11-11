@@ -21,7 +21,7 @@ namespace MyBBS.CardManage
             if (!IsPostBack)
             {
                 ddlMName.DataSource = ModuleManager.getAllModule();
-                ddlMName.DataTextField = "版块名称";
+                ddlMName.DataTextField = "ModuleName";
                 ddlMName.DataBind();
             }
             string strName = "";
@@ -94,7 +94,7 @@ namespace MyBBS.CardManage
             try
             {
                 module.ModuleName = ddlMName.SelectedValue;
-                card.ModuleID = ModuleManager.findModuleByModuleName(module).ModuleID;
+                card.ModuleID = ModuleManager.findModuleByName(module).ModuleID;
             }
             catch
             {
