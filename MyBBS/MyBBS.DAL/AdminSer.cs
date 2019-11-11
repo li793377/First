@@ -34,8 +34,8 @@ namespace MyBBS.DAL
         {
             SqlParameter[] sp = new SqlParameter[]
           {
-                new SqlParameter("adminname",admin.AdminName),
-                new SqlParameter("adminpwd"  ,admin.AdminPwd),
+                new SqlParameter("@adminname",admin.AdminName),
+                new SqlParameter("@adminpwd"  ,admin.AdminPwd),
          };
             string sql = "update tb_Admin set 管理员姓名=@adminname,管理员密码=@adminpwd";
             return sqlHelp.ExecuteNonQuery(sql,sp);

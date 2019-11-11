@@ -42,7 +42,6 @@ namespace MyBBS.CardManage
             int curpage = Convert.ToInt32(labPage.Text);
             PagedDataSource ps = new PagedDataSource();
             card.ModuleID = Page.Request.QueryString["ModuleID"].ToString();
-            card.ModuleID = "M1001";
             ps.DataSource = CardManager.FindCardByMouduleID(card);
             ps.AllowPaging = true; //是否可以分页
             ps.PageSize = 3; //显示的数量

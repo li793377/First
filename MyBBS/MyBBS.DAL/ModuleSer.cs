@@ -24,8 +24,8 @@ namespace MyBBS.DAL
         {
             SqlParameter[] sp = new SqlParameter[]
          {
-                new SqlParameter("moduleid",module.ModuleID),
-                new SqlParameter("modulename",module.ModuleName),
+                new SqlParameter("@moduleid",module.ModuleID),
+                new SqlParameter("@modulename",module.ModuleName),
         };
             string sql = "insert into tb_module values( @moduleid,@modulename)";
             return sqlHelp.ExecuteNonQuery(sql, sp);
@@ -63,6 +63,17 @@ namespace MyBBS.DAL
             string sql = "select * from tb_Module where 版块名称 like @modulename";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
             return getModuleFromDataReader(dr);
+        }
+        public static List<Module> getModuleByIDName(Module module)
+        {
+            SqlParameter[] sp =
+            {
+                new SqlParameter("@modulename",module.ModuleName),
+                new SqlParameter("@moduleid",module.ModuleID),
+            };
+            string sql = "select * from tb_module where (版块名称 like @modulename or 版块编号 like @moduleid)";
+            SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
+            return getListOfModuleFromDataReader(dr);
         }
         public static List<Module> getAllModule()
         {
@@ -104,7 +115,6 @@ namespace MyBBS.DAL
                 {
                     module.ModuleName = dr.GetString(moduleName);
                 }
-
                 listOfModule.Add(module);
             }
             return listOfModule;

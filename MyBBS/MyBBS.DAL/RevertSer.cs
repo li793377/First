@@ -15,20 +15,20 @@ namespace MyBBS.DAL
         {
             SqlParameter[] sp = new SqlParameter[]
          {
-                new SqlParameter("revertid",revert.RevertID),
-                new SqlParameter("revertname",revert.RevertName),
-                new SqlParameter("cardid",revert.CardID),
-                new SqlParameter("revertcontent",revert.RevertContent),
-                new SqlParameter("reverttime",revert.RevertTime),
-                new SqlParameter("revertpeople",revert.RevertPeople),
-                new SqlParameter("pop",revert.Pop),
+                new SqlParameter("@revertid",revert.RevertID),
+                new SqlParameter("@revertname",revert.RevertName),
+                new SqlParameter("@cardid",revert.CardID),
+                new SqlParameter("@revertcontent",revert.RevertContent),
+                new SqlParameter("@reverttime",revert.RevertTime),
+                new SqlParameter("@revertpeople",revert.RevertPeople),
+                new SqlParameter("@pop",revert.Pop),
         };
             string sql = "insert into tb_card values( @revertid,@revertname,@cardid,@revertcontent,@reverttime,@revertpeople,@pop)";
             return sqlHelp.ExecuteNonQuery(sql, sp);
         }
         public static string getMaxRevertID()
         {
-            string sql = "select top 1 回帖编号 from tb_revert order by 回帖编号 Desc";
+            string sql = "select top 1 * from tb_revert order by 回帖编号 Desc";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql);
             return getOfRevertbyDataReader(dr).RevertID;
         }

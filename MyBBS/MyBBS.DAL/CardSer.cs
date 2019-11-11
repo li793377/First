@@ -15,20 +15,20 @@ namespace MyBBS.DAL
         {
             SqlParameter[] sp = new SqlParameter[]
          {
-                new SqlParameter("cardid",card.CardID),
-                new SqlParameter("cardname",card.CardName),
-                new SqlParameter("moduleid",card.ModuleID),
-                new SqlParameter("cardcontent",card.CardContent),
-                new SqlParameter("cardtime",card.CardTime),
-                new SqlParameter("cardpeople",card.CardPeople),
-                new SqlParameter("pop",card.Pop),
+                new SqlParameter("@cardid",card.CardID),
+                new SqlParameter("@cardname",card.CardName),
+                new SqlParameter("@moduleid",card.ModuleID),
+                new SqlParameter("@cardcontent",card.CardContent),
+                new SqlParameter("@cardtime",card.CardTime),
+                new SqlParameter("@cardpeople",card.CardPeople),
+                new SqlParameter("@pop",card.Pop),
         };
             string sql = "insert into tb_card values( @cardid,@cardname,@moduleid,@cardcontent,@cardtime,@cardpeople,@pop)";
             return sqlHelp.ExecuteNonQuery(sql, sp);
         }
         public static string getMaxCardID()
         {
-            string sql = "select top 1 帖子编号 from tb_card order by 帖子编号 Desc";
+            string sql = "select top 1 * from tb_card order by 帖子编号 Desc";
             SqlDataReader dr = sqlHelp.ExecuteReader(sql);
             return getOfCardFromDataReader(dr).CardID;
         }
@@ -36,7 +36,7 @@ namespace MyBBS.DAL
         {
             SqlParameter[] sp = new SqlParameter[]
           {
-                new SqlParameter("cardid",card.CardID),
+                new SqlParameter("@cardid",card.CardID),
 
          };
             string sql = "delete from tb_Card where 帖子编号 = @cardid";
@@ -51,14 +51,14 @@ namespace MyBBS.DAL
             SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
             return getOfCardFromDataReader(dr);
         }
-        
+
         public static List<Card> FindCardByMouduleID(Card card)
         {
             {
                 SqlParameter[] sp = {
                         new SqlParameter("@moduleID", card.ModuleID),
                       };
-                string sql = "select * from tb_card where 模块编号 like @cardid";
+                string sql = "select * from tb_card where 版块编号 like @moduleid";
                 SqlDataReader dr = sqlHelp.ExecuteReader(sql, sp);
                 return getListOfCardFromDataReader(dr);
             }

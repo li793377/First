@@ -31,7 +31,7 @@
                                         </td>
                                     <td style="vertical-align:top; text-align: left; width: 610px; height: 35px; background-image: url(../Images/版块分类名称上部分.jpg);">
                                     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href='../CardManage/Card.aspx?ModuleID=<%# DataBinder.Eval(Container.DataItem,"ModuleID") %>'
+                                    <a href='../CardManage/Cards.aspx?ModuleID=<%# DataBinder.Eval(Container.DataItem,"ModuleID") %>'
                                             style="font-size: 9pt;text-decoration:none; color:Black;">
                                             <%# DataBinder.Eval(Container.DataItem,"ModuleName") %>
                                             </a></td>

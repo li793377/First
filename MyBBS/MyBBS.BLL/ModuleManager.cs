@@ -33,6 +33,10 @@ namespace MyBBS.BLL
         {
             return ModuleSer.getAllModule();
         }
+        public static List<Module> getModuleByIDName(Module module)
+        {
+            return ModuleSer.getModuleByIDName(module);
+        }
         public static Module findModuleByName(Module module)
         {
             return ModuleSer.findModuleByName(module);

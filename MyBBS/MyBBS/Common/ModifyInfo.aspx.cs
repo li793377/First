@@ -15,10 +15,11 @@ namespace MyBBS.Common
         Model.Image images = new Model.Image();
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
                 ddlPhoto.DataSource = ImageManager.getAllPhoto();
-                ddlPhoto.DataTextField = "编号";
+                ddlPhoto.DataTextField = "PhotoID";
                 ddlPhoto.DataBind();
                 if (Session["Pop"].ToString() == "用户")
                 {

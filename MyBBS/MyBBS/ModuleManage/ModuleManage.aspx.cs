@@ -62,7 +62,7 @@ namespace MyBBS.ModuleManage
                     HyperLink1.Visible = false;
                     host.HostName = Session["Name"].ToString();
                     module.ModuleID = HostManager.FindHostByHostName(host).ModuleID;
-                    gvInfo.DataSource = ModuleManager.FindModuleByID(module);
+                    gvInfo.DataSource = ModuleManager.getModuleByIDName(module);
                     gvInfo.DataKeyNames = new string[] { "版块编号" };
                     gvInfo.DataBind();
                     return;
@@ -80,7 +80,7 @@ namespace MyBBS.ModuleManage
                 if (Session["Pop"].ToString().Trim() == "管理员")
                 {
                     module.ModuleName = txtName.Text;
-                    gvInfo.DataSource = ModuleManager.findModuleByName(module);
+                    gvInfo.DataSource = ModuleManager.getModuleByIDName(module);
                     gvInfo.DataKeyNames = new string[] { "版块编号" };
                     gvInfo.DataBind();
                     return;
